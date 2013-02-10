@@ -44,6 +44,14 @@ This library implements the following algorithms, classes and functions:
  [3] D. M. Steinberg, An Unsupervised Approach to Modelling Visual Data, PhD
      Thesis, 2013.
 
+Please consider citing reference [3] or 
+
+     D. M. Steinberg, A. Friedman, O. Pizarro, and S. B. Williams. A Bayesian 
+     nonparametric approach to clustering data from underwater robotic surveys.
+     In International Symposium on Robotics Research, Flagstaff, AZ, Aug. 2011.
+
+if you use this code. Thanks!
+
 
 DEPENDENCIES -------------------------------------------------------------------
 
