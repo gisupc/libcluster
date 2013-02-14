@@ -276,5 +276,6 @@ double learnBEMM (
     const unsigned int nthreads = omp_get_max_threads()
     );
 
+
 }
 #endif // LIBCLUSTER_H

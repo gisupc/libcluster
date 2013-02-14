@@ -146,7 +146,8 @@ Notes:
  - Either the build will warn you, or running the .m files will fail if your
    compiler is not compatible with Matlab. If you get the warning, you may not
    need to do anything (see below if running the code after compilation fails).
-   To fix this with Ubuntu 10.10 and 11.04 I did the following:
+   To fix this with Ubuntu 10.10 and 11.04 I the following:
+
 
    1) run $ sudo apt-get install gcc-4.x-base g++-4.x-base libstdc++6-4.x-dev
       Where 'x' is the version number that Matlab uses (or close too 4.3 for
@@ -170,10 +171,16 @@ Notes:
 
     try one of the following:
 
-    a) change the symbolic link ~/.maltab/bin/gcc to point to the version of gcc
+    a) Run matlab (from the command line or with a script) like:
+
+        $ LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6:\
+          /usr/local/lib/libcluster.so\
+          /usr/local/MATLAB/R201XX/bin/matlab -desktop
+
+    b) change the symbolic link ~/.maltab/bin/gcc to point to the version of gcc
        you are using in /usr/bin/gcc-4.x
 
-    b) if no such directory exists you can remove the symlinks in Matlab's root 
+    c) if no such directory exists you can remove the symlinks in Matlab's root 
        to its own copy's of the C and C++ libraries, so it will then use your 
        systems,
 
@@ -185,7 +192,7 @@ Notes:
        Matlab should now automatically look for the correct system libraries.
 
 - If you are using OS X, and the version of matlab you are using cannot find the
-  system heaters, have a look at ~/.matlab/R20xxx/mexopts.sh and change all 
+  system headers, have a look at ~/.matlab/R20xxx/mexopts.sh and change all 
   lines:
 
     SDKROOT='/Developer/SDKs/MacOSX10.X.sdk'
